@@ -1,6 +1,8 @@
 
 import React, { useContext } from 'react';
 import { TiDelete } from 'react-icons/ti';
+import { CiCirclePlus } from "react-icons/ci";
+import { CiCircleMinus } from "react-icons/ci";
 import { AppContext } from '../context/AppContext';
 
 const ExpenseItem = (props) => {
@@ -43,8 +45,8 @@ const ExpenseItem = (props) => {
         <tr>
         <td>{props.name}</td>
         <td>{currency}{props.cost}</td>
-        <td><button onClick={event=> increaseAllocation(props.name)}>+</button></td>
-        <td><button onClick={event=> decreaseAllocation(props.name)}>-</button></td>
+        <td><CiCirclePlus size='1.5em' color='green' onClick={event=> increaseAllocation(props.name)}>+</CiCirclePlus></td>
+        <td><CiCircleMinus size='1.5em' color='red' onClick={event=> decreaseAllocation(props.name)}>-</CiCircleMinus></td>
         <td><TiDelete size='1.5em' onClick={handleDeleteExpense}></TiDelete></td>
         </tr>
     );
